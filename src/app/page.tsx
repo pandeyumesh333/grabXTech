@@ -28,27 +28,27 @@ export default function Home() {
         </div>
         <div className="container mx-auto px-4 z-10">
           <div className="max-w-4xl">
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+            <h1 className="text-5xl md:text-7xl font-bold text-yellow-500 mb-6 leading-tight">
               Transforming Science Through
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-600">
                 {" "}
                 Innovation
               </span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-200 mb-8">
+            <p className="text-xl md:text-2xl text-yellow-500 mb-8">
               Leading provider of cutting-edge laboratory equipment and
               scientific solutions
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <button
                 onClick={() => router.push("/products")}
-                className="px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-semibold transition-all"
+                className="px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-yellow-500 rounded-lg font-semibold transition-all"
               >
                 Explore Products
               </button>
               <button
                 onClick={() => router.push("/about")}
-                className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white rounded-lg font-semibold backdrop-blur-sm transition-all"
+                className="px-8 py-4 bg-yellow-500 hover:bg-yellow-600 text-blue-500 rounded-lg font-semibold backdrop-blur-sm transition-all"
               >
                 Know More
               </button>
@@ -82,7 +82,7 @@ export default function Home() {
       <div className="py-20 bg-gray-900">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4 text-white">
+            <h2 className="text-4xl font-bold mb-4 text-yellow-500">
               Our Solutions
             </h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
@@ -126,7 +126,7 @@ export default function Home() {
                 </div>
                 <div className="p-6">
                   <div className="text-indigo-400 mb-4">{solution.icon}</div>
-                  <h3 className="text-xl font-bold mb-2 text-white">
+                  <h3 className="text-xl font-bold mb-2 text-yellow-500">
                     {solution.title}
                   </h3>
                   <p className="text-gray-400">{solution.description}</p>
@@ -142,7 +142,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-4xl font-bold mb-8 text-white">
+              <h2 className="text-4xl font-bold mb-8 text-yellow-500">
                 Why Choose GrabX Tech
               </h2>
               <div className="space-y-6">
@@ -166,7 +166,7 @@ export default function Home() {
                   <div key={index} className="flex gap-4">
                     <div className="mt-1">{feature.icon}</div>
                     <div>
-                      <h3 className="font-semibold text-xl mb-2 text-white">
+                      <h3 className="font-semibold text-xl mb-2 text-yellow-500">
                         {feature.title}
                       </h3>
                       <p className="text-gray-400">{feature.description}</p>
@@ -190,12 +190,12 @@ export default function Home() {
       {/* CTA Section */}
       <div className="bg-gradient-to-r from-indigo-600 to-blue-700 py-16">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-yellow-500 mb-8">
             Ready to Transform Your Laboratory?
           </h2>
           <button
             onClick={() => router.push("/contact")}
-            className="px-8 py-4 bg-white text-indigo-600 rounded-lg font-semibold hover:bg-gray-100 transition-all"
+            className="px-8 py-4 bg-yellow-500 text-indigo-600 rounded-lg font-semibold hover:bg-gray-100 transition-all"
           >
             Get Started Today
           </button>

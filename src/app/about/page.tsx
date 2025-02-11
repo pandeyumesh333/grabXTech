@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { FaHistory, FaGlobeAmericas, FaLightbulb, FaUsers } from "react-icons/fa";
+import { FaGlobeAmericas, FaLightbulb, FaUsers } from "react-icons/fa";
 
 export default function About() {
   const timeline = [
@@ -81,10 +81,10 @@ export default function About() {
             <div>
               <h2 className="text-4xl font-bold mb-6 text-white">Our Mission</h2>
               <p className="text-gray-300 mb-6">
-                At GrabX Tech, we're dedicated to advancing scientific discovery through innovative laboratory solutions. Our mission is to empower researchers and scientists with cutting-edge equipment and unwavering support.
+                At GrabX Tech, we&apos;re dedicated to advancing scientific discovery through innovative laboratory solutions. Our mission is to empower researchers and scientists with cutting-edge equipment and unwavering support.
               </p>
               <p className="text-gray-300">
-                We believe that great science requires great tools, and we're committed to providing the very best to our global community of researchers.
+                We believe that great science requires great tools, and we&apos;re committed to providing the very best to our global community of researchers.
               </p>
             </div>
           </div>

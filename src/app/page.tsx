@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import {
   FaFlask,
@@ -7,16 +9,17 @@ import {
   FaCheckCircle,
   FaHeadset,
 } from "react-icons/fa";
-import Router from "next/navigation";
+import { useRouter } from "next/navigation";
 export default function Home() {
-  const router = router()
+  const router = useRouter();
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
       <div className="relative h-[90vh] flex items-center">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/hero-lab.jpg"
+            src="/futuristic lab.jfif"
             alt="Modern Laboratory"
             fill
             className="object-cover brightness-[0.3]"
@@ -37,11 +40,17 @@ export default function Home() {
               scientific solutions
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <button onClick={router.push("/products")} className="px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-semibold transition-all">
+              <button
+                onClick={() => router.push("/products")}
+                className="px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-semibold transition-all"
+              >
                 Explore Products
               </button>
-              <button className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white rounded-lg font-semibold backdrop-blur-sm transition-all">
-                Contact Sales
+              <button
+                onClick={() => router.push("/about")}
+                className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white rounded-lg font-semibold backdrop-blur-sm transition-all"
+              >
+                Know More
               </button>
             </div>
           </div>
@@ -88,22 +97,19 @@ export default function Home() {
                 title: "Lab Equipment",
                 description:
                   "State-of-the-art instruments for precise analysis",
-                image:
-                  "https://images.unsplash.com/photo-1582719471384-894fbb16e074",
+                image: "/lab equipment.jfif",
               },
               {
                 icon: <FaMicroscope className="w-8 h-8" />,
                 title: "Research Tools",
                 description: "Advanced tools for groundbreaking discoveries",
-                image:
-                  "https://images.unsplash.com/photo-1576086213369-97a306d36557",
+                image: "/research tools.jfif",
               },
               {
                 icon: <FaChartLine className="w-8 h-8" />,
                 title: "Data Analytics",
                 description: "Powerful analytics for meaningful insights",
-                image:
-                  "https://images.unsplash.com/photo-1532094349884-543bc11b234d",
+                image: "/data analytics.jfif",
               },
             ].map((solution, index) => (
               <div
@@ -171,7 +177,7 @@ export default function Home() {
             </div>
             <div className="relative h-[500px] rounded-2xl overflow-hidden">
               <Image
-                src="https://images.unsplash.com/photo-1581093588401-fbb62a02f120"
+                src="/Free Vector _ Polygonal wireframe handshake abstract blue composition as symbol friendship and business partnership vector illustration.jfif"
                 alt="Quality Assurance"
                 fill
                 className="object-cover"
@@ -187,7 +193,10 @@ export default function Home() {
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
             Ready to Transform Your Laboratory?
           </h2>
-          <button className="px-8 py-4 bg-white text-indigo-600 rounded-lg font-semibold hover:bg-gray-100 transition-all">
+          <button
+            onClick={() => router.push("/contact")}
+            className="px-8 py-4 bg-white text-indigo-600 rounded-lg font-semibold hover:bg-gray-100 transition-all"
+          >
             Get Started Today
           </button>
         </div>

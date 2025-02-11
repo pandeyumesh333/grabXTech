@@ -179,6 +179,7 @@ export default function Home() {
               <Image
                 src="/Free Vector _ Polygonal wireframe handshake abstract blue composition as symbol friendship and business partnership vector illustration.jfif"
                 alt="Quality Assurance"
+                sizes=""
                 fill
                 className="object-cover"
               />

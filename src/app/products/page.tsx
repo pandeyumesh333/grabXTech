@@ -12,7 +12,6 @@ export default function Products() {
   console.log(windowWidth);
   useEffect(() => {
     const handleResize = () => {
-      
       setWindowWidth(window.innerWidth);
       if (window.innerWidth >= 768) {
         setIsMobileFiltersOpen(false);
@@ -20,8 +19,8 @@ export default function Products() {
     };
 
     handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const categories = [
@@ -29,7 +28,7 @@ export default function Products() {
     "analysis",
     "measurement",
     "processing",
-    "storage"
+    "storage",
   ];
 
   const products = [
@@ -37,30 +36,35 @@ export default function Products() {
       id: 1,
       name: "Advanced Spectrophotometer",
       category: "analysis",
-      image: "/Spectrophotometer manufacturer.jfif",
-      description: "High-precision spectral analysis with advanced data processing"
+      image: "/digitalSpectrometer.jpg",
+      description:
+        "High-precision spectral analysis with advanced data processing",
     },
     {
       id: 2,
       name: "Digital Microscope Pro",
       category: "analysis",
-      image: "/microscope.jfif",
-      description: "4K resolution with AI-enhanced image processing"
+      image: "/researchTool.png",
+      description: "4K resolution with AI-enhanced image processing",
     },
     {
       id: 3,
       name: "Precision Balance",
       category: "measurement",
-      image: "/balance.jfif",
-      description: "Ultra-precise measurement with 0.0001g resolution"
+      image: "/labEquipment.jpeg",
+      description: "Ultra-precise measurement with 0.0001g resolution",
     },
   ];
 
   const filteredProducts = products
-    .filter(product => selectedCategory === "all" || product.category === selectedCategory)
-    .filter(product => 
-      product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      product.description.toLowerCase().includes(searchTerm.toLowerCase())
+    .filter(
+      (product) =>
+        selectedCategory === "all" || product.category === selectedCategory
+    )
+    .filter(
+      (product) =>
+        product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        product.description.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
   return (
@@ -69,7 +73,7 @@ export default function Products() {
       <div className="relative h-[30vh] md:h-[40vh] flex items-center">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/products.jfif"
+            src="/products.jpg"
             alt="Laboratory Equipment"
             fill
             className="object-cover brightness-[0.3]"
@@ -77,7 +81,9 @@ export default function Products() {
           />
         </div>
         <div className="container mx-auto px-4 z-10">
-          <h1 className="text-3xl md:text-5xl font-bold text-yellow-500 mb-4 md:mb-6">Our Products</h1>
+          <h1 className="text-3xl md:text-5xl font-bold text-yellow-500 mb-4 md:mb-6">
+            Our Products
+          </h1>
           <p className="text-lg md:text-xl text-gray-200 max-w-2xl">
             Discover our range of cutting-edge laboratory equipment
           </p>
@@ -106,8 +112,12 @@ export default function Products() {
                 <FaFilter className="text-yellow-500" />
               </button>
             </div>
-            
-            <div className={`${isMobileFiltersOpen ? 'flex' : 'hidden'} md:flex flex-wrap md:flex-nowrap gap-2 md:gap-4 w-full md:w-auto transition-all duration-300 ease-in-out`}>
+
+            <div
+              className={`${
+                isMobileFiltersOpen ? "flex" : "hidden"
+              } md:flex flex-wrap md:flex-nowrap gap-2 md:gap-4 w-full md:w-auto transition-all duration-300 ease-in-out`}
+            >
               {categories.map((category) => (
                 <button
                   key={category}
@@ -131,7 +141,10 @@ export default function Products() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
             {filteredProducts.map((product) => (
-              <div key={product.id} className="bg-gray-800 rounded-xl overflow-hidden group hover:shadow-xl transition-all">
+              <div
+                key={product.id}
+                className="bg-gray-800 rounded-xl overflow-hidden group hover:shadow-xl transition-all"
+              >
                 <div className="relative h-48 sm:h-56 md:h-64">
                   <Image
                     src={product.image}
@@ -142,9 +155,13 @@ export default function Products() {
                 </div>
                 <div className="p-4 md:p-6">
                   <div className="flex justify-between items-start mb-2 md:mb-4">
-                    <h3 className="text-lg md:text-xl font-bold text-yellow-500">{product.name}</h3>
+                    <h3 className="text-lg md:text-xl font-bold text-yellow-500">
+                      {product.name}
+                    </h3>
                   </div>
-                  <p className="text-sm md:text-base text-gray-400 mb-4">{product.description}</p>
+                  <p className="text-sm md:text-base text-gray-400 mb-4">
+                    {product.description}
+                  </p>
                   <button className="w-full px-4 py-2 bg-indigo-600 text-yellow-500 rounded-lg hover:bg-indigo-700 transition-colors text-sm md:text-base">
                     Learn More
                   </button>

@@ -19,7 +19,7 @@ export default function Home() {
       <div className="relative h-[90vh] flex items-center">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/futuristic lab.jfif"
+            src="/modernLab.jpeg"
             alt="Modern Laboratory"
             fill
             className="object-cover brightness-[0.3]"
@@ -97,19 +97,19 @@ export default function Home() {
                 title: "Lab Equipment",
                 description:
                   "State-of-the-art instruments for precise analysis",
-                image: "/lab equipment.jfif",
+                image: "/labEquipments.jpg",
               },
               {
                 icon: <FaMicroscope className="w-8 h-8" />,
                 title: "Research Tools",
                 description: "Advanced tools for groundbreaking discoveries",
-                image: "/research tools.jfif",
+                image: "/researchTool.png",
               },
               {
                 icon: <FaChartLine className="w-8 h-8" />,
                 title: "Data Analytics",
                 description: "Powerful analytics for meaningful insights",
-                image: "/data analytics.jfif",
+                image: "/dataAnalytist.jpg",
               },
             ].map((solution, index) => (
               <div
@@ -177,9 +177,8 @@ export default function Home() {
             </div>
             <div className="relative h-[500px] rounded-2xl overflow-hidden">
               <Image
-                src="/Free Vector _ Polygonal wireframe handshake abstract blue composition as symbol friendship and business partnership vector illustration.jfif"
+                src="/quality.jpg"
                 alt="Quality Assurance"
-                sizes=""
                 fill
                 className="object-cover"
               />

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaClock, FaLinkedin, FaTwitter, FaFacebook } from "react-icons/fa";
+import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaClock, FaLinkedin, FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -23,18 +23,36 @@ export default function Contact() {
 
   if (!isMounted) return null; // Avoid rendering mismatched SSR & client content
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log(formData);
-    setFormData({
-      firstName: "",
-      lastName: "",
-      email: "",
-      phone: "",
-      company: "",
-      message: ""
-    });
-  };
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+try {
+  const response = await fetch("/api",
+    {
+      method: "POST",
+     headers: { "Content-Type": "application/json"},
+     body: JSON.stringify(formData)
+    }
+  )
+  if(!response.ok){
+throw new Error("Failed to submit form")
+  }
+
+  const data = await response.json();
+  console.log("success", data);
+  setFormData({
+    firstName:"",
+    lastName: "",
+    email: "",
+    phone: "",
+    company: "",
+    message: ""
+  })
+
+} catch (error) {
+  console.log(error)
+  console.error("error: ", error)
+}
+  }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -51,9 +69,10 @@ export default function Contact() {
   ];
 
   const socialLinks = [
-    { icon: <FaLinkedin className="w-6 h-6" />, url: "#" },
-    { icon: <FaTwitter className="w-6 h-6" />, url: "#" },
-    { icon: <FaFacebook className="w-6 h-6" />, url: "#" }
+    { icon: <FaLinkedin className="w-6 h-6" />, url: "https://www.linkedin.com/company/grabx-tech/" },
+    { icon: <FaFacebook className="w-6 h-6" />, url: "https://www.facebook.com/grabx.tech" },
+    { icon: <FaYoutube className="w-6 h-6" />, url: "https://youtube.com/@grabxtech?si=hs6yhZfIsjq_mJX7" },
+    { icon: <FaInstagram className="w-6 h-6" />, url: "https://www.instagram.com/grabxtech?igsh=MWJzeXo2cjQyZmZzMg==" }
   ];
 
   return (

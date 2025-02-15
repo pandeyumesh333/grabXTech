@@ -1,15 +1,28 @@
 import mongoose from "mongoose";
 
+const MONGODB_URI = process.env.MONGODB_URI;
 
-
-if (!process.env.MONGODB_URI) {
-  throw new Error("MONGODB_URI is not defined in the environment variables");
-}
-try {
-  mongoose.connect(process.env.MONGODB_URI);
-  console.log("Connected to MongoDB");
-} catch (error) {
-  console.log(error);
+if (!MONGODB_URI) {
+  throw new Error("MONGODB_URI is not defined in environment variables");
 }
 
-export default mongoose;
+const connectDB = async () => {
+  if (mongoose.connection.readyState >= 1) {
+    console.log("MongoDB already connected");
+    return;
+  }
+
+  try {
+    await mongoose.connect(MONGODB_URI, {
+      dbName: "aryan", // Optional: specify your database
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    } as any);
+    console.log("Connected to MongoDB");
+  } catch (error) {
+    console.error("MongoDB Connection Error:", error);
+    throw new Error("Database connection failed");
+  }
+};
+
+export default connectDB;

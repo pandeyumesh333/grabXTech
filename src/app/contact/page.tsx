@@ -72,23 +72,23 @@ export default function Contact() {
   const contactInfo = [
     {
       icon: <FaMapMarkerAlt className="w-6 h-6" />,
-      title: "Global Headquarters",
-      details: "123 Innovation Drive, Tech City, TC 12345, United States",
+      title: "Address",
+      details: "Kokan Vaibhav Society, Near N. G. Park, Dahisar(E), Mumbai - 40068",
     },
     {
       icon: <FaPhone className="w-6 h-6" />,
       title: "Contact Numbers",
-      details: "Sales: +1 (555) 123-4567\nSupport: +1 (555) 765-4321",
+      details: "+91 8976006264\n+91 9076099461",
     },
     {
       icon: <FaEnvelope className="w-6 h-6" />,
       title: "Email Addresses",
-      details: "Sales: sales@grabxtech.com\nSupport: support@grabxtech.com",
+      details: "grabxtechia@gmail.com",
     },
     {
       icon: <FaClock className="w-6 h-6" />,
       title: "Business Hours",
-      details: "Monday - Friday: 9AM - 6PM EST\nSaturday: 10AM - 2PM EST",
+      details: "Monday - Saturday: 9AM - 6PM \n Sunday: Closed",
     },
   ];
 
